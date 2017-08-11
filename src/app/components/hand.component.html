@@ -1,0 +1,16 @@
+<div *ngIf="contents.length == 0">
+  <h1>You have nothing on hand!</h1>
+</div>
+<div *ngIf="contents.length > 0">
+  <h1>
+    This is your hand
+  </h1>
+  <table>
+    <tr>
+      <td *ngFor="let i of contents">
+        <img [src]="i.imageUrl" width="28px">
+      </td>
+    </tr>
+  </table>
+
+</div>

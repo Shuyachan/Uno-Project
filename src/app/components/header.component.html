@@ -1,0 +1,22 @@
+<h1> Please select your players: {{players}} </h1>
+<button type="button" (click)="addplayer()">Add Players!</button>
+<button type="button" (click)="removeplayer()">Remove players!</button>
+<br><br>
+<button type="button" (click)="handappear()">Start this game!</button>
+
+<div *ngIf="startgame==true">
+  <div *ngFor="let r of numberarray">
+  <h1>
+    Player {{r}}
+  </h1>
+    <div *ngIf="trial !=null">
+    <table width="700px">
+      <tr>
+        <ng-container *ngFor="let i of trial">
+        <td *ngIf="i.playernumber==r"><img [src]="i.cardOnHand.imageUrl" width="100px"></td>
+        </ng-container>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
